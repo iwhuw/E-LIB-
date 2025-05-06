@@ -1,0 +1,358 @@
+/* Theme Variables */
+:root {
+    /* Base theme colors - dark theme by default */
+    --bg-color: #1a1a1a;
+    --secondary-bg: #242424;
+    --tertiary-bg: #333;
+    --text-color: #ffffff;
+    --secondary-text: #cccccc;
+    --border-color: #444;
+    --highlight-color: #1a73e8;
+    --card-bg: #242424;
+    --sidebar-bg: #242424;
+    --button-bg: #333;
+    
+    /* Typography */
+    --base-font-size: 16px;
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Common Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    min-height: 100vh;
+    font-size: var(--base-font-size);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: var(--sidebar-bg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: width 0.3s ease;
+    position: relative;
+    border-right: 1px solid var(--border-color);
+}
+
+.sidebar.collapsed {
+    width: 70px;
+}
+
+.sidebar.collapsed .nav-text {
+    display: none;
+}
+
+.sidebar .collapse-btn {
+    position: absolute;
+    top: 20px;
+    left: 100%;
+    background-color: var(--tertiary-bg);
+    border: none;
+    color: var(--text-color);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--tertiary-bg);
+    border-radius: 10px;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Navigation Item Styles */
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    background-color: var(--tertiary-bg);
+    border-radius: 8px;
+    transform: translateX(5px);
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background-color: var(--bg-color);
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header-icons {
+    display: inline-flex;
+    gap: 20px;
+    margin: 30px 0;
+    background-color: var(--secondary-bg);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+/* Chat Panel Styles */
+.chat-panel {
+    width: 300px;
+    background-color: var(--secondary-bg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease;
+    position: relative;
+    border-left: 1px solid var(--border-color);
+}
+
+.chat-panel.collapsed {
+    width: 70px;
+}
+
+.chat-panel.collapsed .chat-content {
+    display: none;
+}
+
+.chat-panel .collapse-btn {
+    position: absolute;
+    top: 20px;
+    right: 100%;
+    background-color: var(--tertiary-bg);
+    border: none;
+    color: var(--text-color);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Chat Messages */
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 300px;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: var(--tertiary-bg) var(--secondary-bg); /* For Firefox */
+    margin-bottom: 15px;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: var(--tertiary-bg);
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: var(--highlight-color);
+}
+
+/* Message Styles */
+.message {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: var(--tertiary-bg);
+    border-radius: 10px;
+}
+
+.message.user-message {
+    background-color: rgba(26, 26, 26, 0.7);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(2px);
+}
+
+.message-time {
+    font-size: 0.8em;
+    color: var(--secondary-text);
+}
+
+/* Chat Input */
+.chat-input {
+    margin-top: 20px;
+    position: relative;
+}
+
+.chat-input input {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--tertiary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--text-color);
+}
+
+.chat-input input:focus {
+    outline: none;
+    border-color: var(--highlight-color);
+}
+
+/* Search Bar Styles */
+.search-bar {
+    flex: 1;
+    margin: 0 20px;
+    position: relative;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: var(--tertiary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--text-color);
+    font-size: 1em;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--highlight-color);
+}
+
+.search-bar input::placeholder {
+    color: var(--secondary-text);
+}
+
+/* Button Styles */
+.button, .action-btn {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover, .action-btn:hover {
+    background-color: var(--tertiary-bg);
+}
+
+.continue-btn {
+    background-color: var(--highlight-color);
+    border: none;
+}
+
+.continue-btn:hover {
+    background-color: #1557b0;
+}
+
+/* Card Styles */
+.curated-card, .genre-card, .related-book {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.curated-card:hover, .genre-card:hover, .related-book:hover {
+    transform: translateY(-5px);
+}
+
+/* Light theme customizations */
+body[data-theme="light"] {
+    --bg-color: #f5f5f5;
+    --secondary-bg: #ffffff;
+    --tertiary-bg: #e0e0e0;
+    --text-color: #333333;
+    --secondary-text: #666666;
+    --border-color: #dddddd;
+    --card-bg: #ffffff;
+    --sidebar-bg: #ffffff;
+    --button-bg: #e0e0e0;
+}
+
+/* Sepia theme customizations */
+body[data-theme="sepia"] {
+    --bg-color: #f4ecd8;
+    --secondary-bg: #e8dcb5;
+    --tertiary-bg: #d8cca3;
+    --text-color: #5b4636;
+    --secondary-text: #7d6045;
+    --border-color: #d0c49f;
+    --card-bg: #e8dcb5;
+    --sidebar-bg: #e8dcb5;
+    --button-bg: #d8cca3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+    
+    .sidebar .nav-text {
+        display: none;
+    }
+    
+    .chat-panel {
+        width: 250px;
+    }
+    
+    .main-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: 60px;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+    
+    .chat-panel {
+        width: 100%;
+    }
+}

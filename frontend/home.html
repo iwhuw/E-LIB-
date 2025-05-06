@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-LibraryAI - Home</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="theme.css">
+    <script src="side-bar.js" defer></script>
+    <script src="common.js" defer></script>
+    <script src="chat.js" defer></script>
+    <script src="settings.js" defer></script>
+    
+    <style>
+        /* Media Player Styles */
+        .media-player {
+            background-color: #242424;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .media-content {
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+
+        .media-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .media-controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .control-btn {
+            background: #000;
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* Participants Section */
+        .participants {
+            margin-top: 20px;
+            width: 100%;
+            overflow: visible;
+        }
+
+        .participants-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+            width: 100%;
+            overflow: visible;
+            min-height: 400px; /* Ensure there's enough space for the grid */
+        }
+
+        .participant-card {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease;
+            background-color: #242424;
+        }
+
+        .participant-card:hover {
+            transform: scale(1.05);
+        }
+
+        .participant-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="https://www.gutenberg.org/pics/pg-logo-002.png" alt="Logo">
+            <span class="nav-text">E-LibraryAI</span>
+        </div>
+        <a href="home.html" class="nav-item">🏠 <span class="nav-text">Home</span></a>
+        <a href="search.html" class="nav-item">🔍 <span class="nav-text">Search</span></a>
+        <a href="recommendations.html" class="nav-item">📚 <span class="nav-text">Collections</span></a>
+        
+        <div style="margin-top: auto;">
+            <a href="index.html" class="nav-item">👤 <span class="nav-text">Profile</span></a>
+            <a href="settings.html" class="nav-item">⚙️ <span class="nav-text">Settings</span></a>
+            <a href="login.html" class="nav-item">↪️ <span class="nav-text">Log Out</span></a>
+        </div>
+        <button class="collapse-btn">◀</button>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Welcome to E-LibraryAI</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search Gutenberg Books" id="gutenbergSearch">
+            </div>
+            <div class="header-icons">
+                <span>🔔</span>
+                <span>✉️</span>
+                <span>💬</span>
+            </div>
+        </div>
+
+        <div class="media-player">
+            <div class="media-content">
+                <img src="https://gutenberg.org/cache/epub/40617/pg40617.cover.medium.jpg" alt="Science Fiction">
+                <div class="media-controls">
+                    <button class="control-btn">🎧</button>
+                    <button class="control-btn">🔊</button>
+                    <button class="control-btn">📖</button>
+                    <button class="control-btn">⋮</button>
+                    <button class="control-btn">↗️</button>
+                </div>
+            </div>
+            <div style="padding: 20px;">
+                <h2>Featured Book: Science Fiction</h2>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <img src="https://gutenberg.org/cache/epub/40617/pg40617.cover.medium.jpg" alt="Author" style="border-radius: 50%; width: 30px; height: 30px;">
+                    <span>Isaac Asimov</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="participants">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3>Recommended Books</h3>
+                <div style="display: flex; gap: 10px;">
+                    <button>←</button>
+                    <button>→</button>
+                </div>
+            </div>
+            <div class="participants-list" id="recommendedBooks">
+                <!-- Book covers will be dynamically added here -->
+                <div class="loading">Loading recommended books...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-panel">
+        <button class="collapse-btn">▶</button>
+        <div class="chat-content">
+            <div class="chat-header">
+                <h2>AI Book Assistant</h2>
+                <span>▼</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3>Top Readers</h3>
+                <a href="#" style="color: #666; text-decoration: none;">See More</a>
+            </div>
+            <div id="topBooks">
+                <!-- Top books will be loaded here -->
+            </div>
+            
+            <div class="chat-messages">
+                <!-- Chat messages will be loaded here -->
+            </div>
+
+            <div class="chat-input">
+                <input type="text" placeholder="Ask about books...">
+            </div>
+
+            <div class="featured-books">
+                <div onclick="fetchBooksByCategory('popular')">
+                    <span>📚 Top Free eBooks</span>
+                    <span>→</span>
+                </div>
+                <div onclick="fetchBooksByCategory('science')">
+                    <span>🔬 Science</span>
+                    <span>→</span>
+                </div>
+                <div onclick="fetchBooksByCategory('trending')">
+                    <span>🌟 Trending Now</span>
+                    <span>→</span>
+                </div>
+                <div onclick="fetchBooksByCategory('philosophy')">
+                    <span>🔖 Philosophy</span>
+                    <span>→</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const GUTENDEX_API = '/api/';
+        
+        // Fetch books by category
+        async function fetchBooksByCategory(category) {
+            try {
+                const chatMessages = document.querySelector('.chat-messages');
+                addBotMessage(`Fetching ${category} books for you...`);
+                
+                // Use the common.js fetchBooks function but pass the category
+                fetchBooks(category);
+            } catch (error) {
+                console.error('Error fetching books:', error);
+                addBotMessage("Sorry, I had trouble fetching those books. Please try again later.");
+            }
+        }
+        
+        // Function to load recommended books
+        async function loadRecommendedBooks() {
+            const recommendedBooksContainer = document.getElementById('recommendedBooks');
+            
+            try {
+                // Show loading indicator
+                recommendedBooksContainer.innerHTML = '<div class="loading">Loading recommended books...</div>';
+                
+                // Use the common.js fetchBooks function for recommendations
+                fetchBooks('science fiction');
+            } catch (error) {
+                console.error('Error loading recommended books:', error);
+                recommendedBooksContainer.innerHTML = '<div class="loading">Error loading books. Please try again later.</div>';
+            }
+        }
+        
+        // Function to load top books
+        async function loadTopBooks() {
+            const topBooksContainer = document.getElementById('topBooks');
+            
+            try {
+                // Use fetchBooks to get popular books (common.js function)
+                const response = await fetch(`${GUTENDEX_API}recommendations`);
+                const data = await response.json();
+                const books = data.books || [];
+                
+                // Update top books in the sidebar
+                if (topBooksContainer && books.length > 0) {
+                    topBooksContainer.innerHTML = books.slice(0, 4).map(book => `
+                        <div class="reader-card" onclick="navigateToBookDetails(${book.id})">
+                            <span>${book.title.slice(0, 15)}${book.title.length > 15 ? '...' : ''}</span>
+                            <span>${book.authors[0]?.split(',')[0] || 'Unknown'}</span>
+                            <span>${book.download_count || 'N/A'}</span>
+                        </div>
+                    `).join('');
+                } else if (topBooksContainer) {
+                    // Use default data if no books returned
+                    topBooksContainer.innerHTML = `
+                        <div class="reader-card">
+                            <span>Pride and Prejudice</span>
+                            <span>Jane Austen</span>
+                            <span>2,345</span>
+                        </div>
+                        <div class="reader-card">
+                            <span>Moby Dick</span>
+                            <span>Herman Melville</span>
+                            <span>1,987</span>
+                        </div>
+                        <div class="reader-card">
+                            <span>Frankenstein</span>
+                            <span>Mary Shelley</span>
+                            <span>1,754</span>
+                        </div>
+                        <div class="reader-card">
+                            <span>Great Expectations</span>
+                            <span>Charles Dickens</span>
+                            <span>1,632</span>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error fetching top books:', error);
+                
+                // Use default data if error
+                if (topBooksContainer) {
+                    topBooksContainer.innerHTML = `
+                        <div class="reader-card">
+                            <span>Pride and Prejudice</span>
+                            <span>Jane Austen</span>
+                            <span>2,345</span>
+                        </div>
+                        <div class="reader-card">
+                            <span>Moby Dick</span>
+                            <span>Herman Melville</span>
+                            <span>1,987</span>
+                        </div>
+                    `;
+                }
+            }
+        }
+        
+        // Load initial data when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load recommended books
+            loadRecommendedBooks();
+            
+            // Load top books in sidebar
+            loadTopBooks();
+            
+            // Media Player Controls
+            document.querySelectorAll('.control-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    console.log(`Button clicked: ${button.textContent}`);
+                    // Add specific functionality for each button here
+                });
+            });
+            
+            // Initialize chat input functionality
+            const chatInput = document.querySelector('.chat-input input');
+            if (chatInput) {
+                chatInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter' && this.value.trim() !== '') {
+                        const userMessage = this.value.trim();
+                        addUserMessage(userMessage);
+                        this.value = '';
+                    }
+                });
+            }
+            
+            // Initial bot message
+            const chatMessages = document.querySelector('.chat-messages');
+            if (chatMessages && chatMessages.children.length === 0) {
+                // Use common.js addBotMessage function
+                if (typeof addBotMessage === 'function') {
+                    addBotMessage("Welcome to E-LibraryAI! I can help you find books, get recommendations, or answer questions about authors and genres. What would you like to explore today?");
+                }
+            }
+        });
+        
+    </script>
+</body>
+</html>
