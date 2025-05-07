@@ -174,7 +174,8 @@ If you get "port already in use" errors:
    ```powershell
    taskkill /PID [PID_NUMBER] /F
    ```
-   🙏 Acknowledgements
+
+🙏 Acknowledgements
 
 Project Gutenberg for the incredible collection of free e-books
 Gutendex API for providing API access to Project Gutenberg
