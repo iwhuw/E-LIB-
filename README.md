@@ -1,16 +1,11 @@
-## 📚 Project Description
+# Corrected Installation Instructions
 
-E-Lib is an AI-powered digital library assistant that allows users to interact with a chatbot to search for books, receive personalized recommendations, and manage their profiles. It combines a Flask-based Python chatbot, a Node.js + MongoDB backend for handling user data and book information, and a JavaScript frontend to provide a seamless and intuitive user experience. The goal is to make digital library access conversational, intelligent, and user-friendly.
+Based on your path (`C:\Users\rohan\Documents\E-lib\backend`), it looks like you're already in the backend directory of your E-lib project. Let's adjust the instructions for your specific folder structure.
 
-## 📚 Features
+## Directory Structure
 
-- AI Chat Assistant: Interact with BookBot to get book recommendations and assistance
-- Book Search: Search the vast Project Gutenberg collection by title, author, or keywords
-- Recommendations: Get personalized book recommendations based on your interests
-- Book Details: View comprehensive information about each book
-- Responsive Design: Works on desktop and mobile devices
+Let's create the necessary directories for MongoDB integration:
 
-Link To Video Presentation
 ```bash
 https://drive.google.com/file/d/1IzBwA4xaUAaHnIjVqr6904E4FY25xVIw/view?usp=sharing
 ```
@@ -178,5 +173,6 @@ If you get "port already in use" errors:
 
 ## 🙏 Acknowledgements
 
-Project Gutenberg for the incredible collection of free e-books
-Gutendex API for providing API access to Project Gutenberg
+- Project Gutenberg for the incredible collection of free e-books
+
+- Gutendex API for providing API access to Project Gutenberg
