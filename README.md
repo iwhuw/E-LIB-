@@ -51,10 +51,9 @@ The application can work in two modes:
 -Open index.html in your browser for local testing
 -Or deploy to a web server
 
-## 🖥️ Terminal Commands to Run E-Lib (Cross-Platform)
-## ⚠️ Before running, make sure you have Node.js, Python 3, and MongoDB installed on your system.
-
 ## For Backend
+🖥️ Terminal Commands to Run E-Lib (Cross-Platform)
+⚠️ Before running, make sure you have Node.js, Python 3, and MongoDB installed on your system.
 
 ## Start MongoDB
 ```bash
