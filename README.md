@@ -2,11 +2,11 @@
 E-Lib is an AI-powered digital library assistant that allows users to interact with a chatbot to search for books, receive personalized recommendations, and manage their profiles. It combines a Flask-based Python chatbot, a Node.js + MongoDB backend for handling user data and book information, and a JavaScript frontend to provide a seamless and intuitive user experience. The goal is to make digital library access conversational, intelligent, and user-friendly.
 📚 Features
 
-AI Chat Assistant: Interact with BookBot to get book recommendations and assistance
-Book Search: Search the vast Project Gutenberg collection by title, author, or keywords
-Recommendations: Get personalized book recommendations based on your interests
-Book Details: View comprehensive information about each book
-Responsive Design: Works on desktop and mobile devices
+- AI Chat Assistant: Interact with BookBot to get book recommendations and assistance
+- Book Search: Search the vast Project Gutenberg collection by title, author, or keywords
+- Recommendations: Get personalized book recommendations based on your interests
+- Book Details: View comprehensive information about each book
+- Responsive Design: Works on desktop and mobile devices
 
 Link To Video Presentation
 ```bash
@@ -20,8 +20,8 @@ https://docs.google.com/document/d/1cVa2mfVzYpQY8_PumFWtWz1C8-nsjGYQ/edit?usp=sh
 🚀 Getting Started
 ## Prerequisites
 
-A modern web browser (Chrome, Firefox, Safari, or Edge)
-Basic understanding of HTML, CSS, and JavaScript if you plan to modify the code
+- A modern web browser (Chrome, Firefox, Safari, or Edge)
+- Basic understanding of HTML, CSS, and JavaScript if you plan to modify the code
 
 ## Installation
 
@@ -39,15 +39,15 @@ For production, configure your server URL in common.js
 ## API Integration
 The application can work in two modes:
 
-Direct API Mode: Connects directly to Gutendex API (for development)
-Backend Mode: Uses your custom backend (for production)
+- Direct API Mode: Connects directly to Gutendex API (for development)
+- Backend Mode: Uses your custom backend (for production)
 
-Configure this in common.js by setting USE_DIRECT_API.
+-Configure this in common.js by setting USE_DIRECT_API.
 
 ## Open the application:
 
-Open index.html in your browser for local testing
-Or deploy to a web server
+-Open index.html in your browser for local testing
+-Or deploy to a web server
 
 🖥️ Terminal Commands to Run E-Lib (Cross-Platform)
 ⚠️ Before running, make sure you have Node.js, Python 3, and MongoDB installed on your system.
@@ -91,10 +91,10 @@ Your folder structure should look something like this:
 E-lib/
 │
 ├── backend/
-│   ├── app.py                 # Your updated Flask app
-│   ├── chatbot_service.py     # Your existing chatbot service
+│   ├── app.py                 # Flask app
+│   ├── chatbot_service.py     # chatbot service
 │   │
-│   └── server/                # New Node.js MongoDB server
+│   └── server/                #  Node.js MongoDB server
 │       ├── models/
 │       │   └── User.js
 │       ├── routes/
@@ -109,33 +109,32 @@ E-lib/
 └── frontend/
     ├── css/
     ├── js/
-    │   ├── api.js             # New integrated API file
+    │   ├── api.js            # integrated API file
     │   └── [other JS files]
     └── [HTML files]
 ```
 🧩 Key Components
 ## JavaScript Files
 
-common.js: Core functionality for API communication, book fetching, and UI updates
-sidebar-chat.js: Handles sidebar collapse functionality
+- common.js: Core functionality for API communication, book fetching, and UI updates
+- sidebar-chat.js: Handles sidebar collapse functionality
 chat-input.js: Manages the chat input and messaging functionality
 
 🤖 BookBot Features
 ## The integrated AI assistant can:
 
-Recommend books based on genres or interests
-Answer questions about authors and books
-Help with searching and navigating the library
-Provide information about literary periods and styles
+- Recommend books based on genres or interests
+- Answer questions about authors and books
+- Help with searching and navigating the library
+- Provide information about literary periods and styles
 
 ## Changing the Theme
 Modify theme.css to customize colors, fonts, and overall appearance.
-Adding New Features
-To extend functionality:
-
-Add new HTML pages as needed
-Update common.js or create new JavaScript files
-Link them in your HTML files
+## Adding New Features
+- To extend functionality:
+- Add new HTML pages as needed
+- Update common.js or create new JavaScript files
+- Link them in your HTML files
 
 ## Testing the Integration
 
