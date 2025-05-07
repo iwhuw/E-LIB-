@@ -1,7 +1,8 @@
-📚 Project Description
+## 📚 Project Description
+
 E-Lib is an AI-powered digital library assistant that allows users to interact with a chatbot to search for books, receive personalized recommendations, and manage their profiles. It combines a Flask-based Python chatbot, a Node.js + MongoDB backend for handling user data and book information, and a JavaScript frontend to provide a seamless and intuitive user experience. The goal is to make digital library access conversational, intelligent, and user-friendly.
 
-📚 Features
+## 📚 Features
 
 - AI Chat Assistant: Interact with BookBot to get book recommendations and assistance
 - Book Search: Search the vast Project Gutenberg collection by title, author, or keywords
@@ -18,7 +19,7 @@ Link For The Project Report
 https://docs.google.com/document/d/1cVa2mfVzYpQY8_PumFWtWz1C8-nsjGYQ/edit?usp=sharing&ouid=110044238099211872579&rtpof=true&sd=true
 ```
 
-🚀 Getting Started
+## 🚀 Getting Started
 ## Prerequisites
 
 - A modern web browser (Chrome, Firefox, Safari, or Edge)
@@ -50,8 +51,8 @@ The application can work in two modes:
 -Open index.html in your browser for local testing
 -Or deploy to a web server
 
-🖥️ Terminal Commands to Run E-Lib (Cross-Platform)
-⚠️ Before running, make sure you have Node.js, Python 3, and MongoDB installed on your system.
+## 🖥️ Terminal Commands to Run E-Lib (Cross-Platform)
+## ⚠️ Before running, make sure you have Node.js, Python 3, and MongoDB installed on your system.
 
 ## For Backend
 
@@ -114,14 +115,14 @@ E-lib/
     │   └── [other JS files]
     └── [HTML files]
 ```
-🧩 Key Components
+## 🧩 Key Components
 ## JavaScript Files
 
 - common.js: Core functionality for API communication, book fetching, and UI updates
 - sidebar-chat.js: Handles sidebar collapse functionality
 chat-input.js: Manages the chat input and messaging functionality
 
-🤖 BookBot Features
+## 🤖 BookBot Features
 ## The integrated AI assistant can:
 
 - Recommend books based on genres or interests
@@ -175,7 +176,7 @@ If you get "port already in use" errors:
    taskkill /PID [PID_NUMBER] /F
    ```
 
-🙏 Acknowledgements
+## 🙏 Acknowledgements
 
 Project Gutenberg for the incredible collection of free e-books
 Gutendex API for providing API access to Project Gutenberg
