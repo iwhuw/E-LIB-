@@ -1,9 +1,13 @@
 📚 Project Description
 E-Lib is an AI-powered digital library assistant that allows users to interact with a chatbot to search for books, receive personalized recommendations, and manage their profiles. It combines a Flask-based Python chatbot, a Node.js + MongoDB backend for handling user data and book information, and a JavaScript frontend to provide a seamless and intuitive user experience. The goal is to make digital library access conversational, intelligent, and user-friendly.
 
-Link To Video
+Link To Video Presentation
 ```bash
 https://drive.google.com/file/d/1IzBwA4xaUAaHnIjVqr6904E4FY25xVIw/view?usp=sharing
+```
+Link For The Project Report
+```bash
+https://docs.google.com/document/d/1cVa2mfVzYpQY8_PumFWtWz1C8-nsjGYQ/edit?usp=sharing&ouid=110044238099211872579&rtpof=true&sd=true
 ```
 
 🖥️ Terminal Commands to Run E-Lib (Cross-Platform)
