@@ -5,39 +5,35 @@ E-Lib is an AI-powered digital library assistant that allows users to interact w
 ⚠️ Before running, make sure you have Node.js, Python 3, and MongoDB installed on your system.
 
 ## Start MongoDB
-bash
-Copy
-Edit
+```bash
 mongod
+```
 Make sure MongoDB is running on the default port 27017.
 
 ## Set Up and Run the Node.js Backend
-bash
-Copy
-Edit
+```bash
 cd backend/server
 npm install
 npm start
+```
 This starts the Node.js server on port 3000.
 
 ## Set Up and Run the Flask Chatbot Server
-bash
-Copy
-Edit
+```bash
 cd ../        # Go back to the backend directory
 pip install -r requirements.txt
 export JWT_SECRET="your_secret_key_here"       # Use `set` instead of `export` on Windows
 python app.py
+```
 This starts the Flask server on port 5000.
 
 ## Open the Application
 Visit the frontend in your browser (if available):
 
-arduino
-Copy
-Edit
+```bash
 http://localhost:3000
-## Folder Structure After Setup
+```
+## Folder Structure 
 
 Your folder structure should look something like this:
 
