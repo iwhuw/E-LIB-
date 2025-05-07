@@ -1,141 +1,45 @@
-# Corrected Installation Instructions
 
-Based on your path (`C:\Users\rohan\Documents\E-lib\backend`), it looks like you're already in the backend directory of your E-lib project. Let's adjust the instructions for your specific folder structure.
 
-## Directory Structure
 
-Let's create the necessary directories for MongoDB integration:
+📚 Project Description
+E-Lib is an AI-powered digital library assistant that allows users to interact with a chatbot to search for books, receive personalized recommendations, and manage their profiles. It combines a Flask-based Python chatbot, a Node.js + MongoDB backend for handling user data and book information, and a JavaScript frontend to provide a seamless and intuitive user experience. The goal is to make digital library access conversational, intelligent, and user-friendly.
 
-```bash
-# Navigate to your backend directory
-cd C:\Users\rohan\Documents\E-lib\backend
+🖥️ Terminal Commands to Run E-Lib (Cross-Platform)
+⚠️ Before running, make sure you have Node.js, Python 3, and MongoDB installed on your system.
 
-# Create MongoDB server structure
-mkdir server
-mkdir server\models
-mkdir server\routes
-mkdir server\middleware
-```
-
-## Set Up the MongoDB Backend
-
-### 1. Create package.json
-
-Create a `package.json` file in the `C:\Users\rohan\Documents\E-lib\backend\server` directory:
-
-```bash
-cd server
-```
-
-Create a new file called `package.json` and copy the content I provided earlier.
-
-### 2. Install Dependencies
-
-Install Node.js dependencies:
-
-```bash
-npm install
-```
-
-### 3. Create .env File
-
-Create a `.env` file in the same server directory:
-
-```
-MONGODB_URI=mongodb://localhost:27017/e-lib
-JWT_SECRET=your_secret_key_here
-PORT=3000
-```
-
-Replace `your_secret_key_here` with a strong random string.
-
-### 4. Create Backend Files
-
-Create the following files with the content I provided earlier:
-
-- `server.js` - Main server file (in the server directory)
-- `models\User.js` - User model
-- `middleware\auth.js` - Authentication middleware
-- `routes\users.js` - User routes
-- `routes\recommendations.js` - Recommendations routes
-
-## Update Flask Application
-
-### 1. Install Required Python Packages
-
-```bash
-pip install PyJWT
-```
-
-### 2. Update app.py
-
-Update your existing app.py (likely in `C:\Users\rohan\Documents\E-lib\backend`) with the JWT-enabled version I provided.
-
-### 3. Set JWT_SECRET Environment Variable
-
-Before running Flask, set the JWT_SECRET environment variable (in PowerShell):
-
-```powershell
-$env:JWT_SECRET = "your_secret_key_here"
-```
-
-Use the same secret key as in your .env file.
-
-## Update Frontend Files
-
-### 1. Create or Update api.js
-
-Place the integrated api.js file in your frontend JavaScript folder. This is likely located at:
-
-```
-C:\Users\rohan\Documents\E-lib\frontend\js\
-```
-
-or a similar location. Make sure to put it where your other JavaScript files are located.
-
-## Running the System
-
-### 1. Start MongoDB
-
-Make sure MongoDB is installed and running:
-
-```bash
-# If MongoDB is installed as a service, it may already be running
-# Otherwise, start it with:
+## Start MongoDB
+bash
+Copy
+Edit
 mongod
-```
+Make sure MongoDB is running on the default port 27017.
 
-### 2. Start Node.js Backend
-
-Open a PowerShell window:
-
-```powershell
-cd C:\Users\rohan\Documents\E-lib\backend\server
+## Set Up and Run the Node.js Backend
+bash
+Copy
+Edit
+cd backend/server
+npm install
 npm start
-```
+This starts the Node.js server on port 3000.
 
-This will start the Node.js server on port 3000.
-
-### 3. Start Flask Backend
-
-In a separate PowerShell window:
-
-```powershell
-$env:JWT_SECRET = "your_secret_key_here"
-cd C:\Users\rohan\Documents\E-lib\backend
+## Set Up and Run the Flask Chatbot Server
+bash
+Copy
+Edit
+cd ../        # Go back to the backend directory
+pip install -r requirements.txt
+export JWT_SECRET="your_secret_key_here"       # Use `set` instead of `export` on Windows
 python app.py
-```
+This starts the Flask server on port 5000.
 
-This will start the Flask server on port 5000.
+## Open the Application
+Visit the frontend in your browser (if available):
 
-### 4. Access the Application
-
-Open your web browser and go to:
-
-```
+arduino
+Copy
+Edit
 http://localhost:3000
-```
-
 ## Folder Structure After Setup
 
 Your folder structure should look something like this:
