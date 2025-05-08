@@ -1,17 +1,18 @@
-# Corrected Installation Instructions
+# E-LibraryAI
 
-Based on your path (`C:\Users\rohan\Documents\E-lib\backend`), it looks like you're already in the backend directory of your E-lib project. Let's adjust the instructions for your specific folder structure.
+E-LibraryAI is an interactive web application that provides a modern interface for browsing and discovering books from the Project Gutenberg library, enhanced with AI-powered chat assistance.
 
-## Directory Structure
+## 📚 Features
 
-Let's create the necessary directories for MongoDB integration:
+- **AI Chat Assistant**: Interact with BookBot to get book recommendations and assistance
+- **Book Search**: Search the vast Project Gutenberg collection by title, author, or keywords
+- **Recommendations**: Get personalized book recommendations based on your interests
+- **Book Details**: View comprehensive information about each book
+- **Responsive Design**: Works on desktop and mobile devices
 
+## Link To Video Presentation
 ```bash
 https://drive.google.com/file/d/1IzBwA4xaUAaHnIjVqr6904E4FY25xVIw/view?usp=sharing
-```
-Link For The Project Report
-```bash
-https://docs.google.com/document/d/1cVa2mfVzYpQY8_PumFWtWz1C8-nsjGYQ/edit?usp=sharing&ouid=110044238099211872579&rtpof=true&sd=true
 ```
 
 ## 🚀 Getting Started
