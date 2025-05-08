@@ -40,13 +40,12 @@ The application can work in two modes:
 - Direct API Mode: Connects directly to Gutendex API (for development)
 - Backend Mode: Uses your custom backend (for production)
 
--Configure this in common.js by setting USE_DIRECT_API.
+- Configure this in common.js by setting USE_DIRECT_API.
 
 ## Open the application:
 
--Open index.html in your browser for local testing
-
--Or deploy to a web server
+- Open index.html in your browser for local testing
+- Or deploy to a web server
 
 ## For Backend
 - 🖥️ Terminal Commands to Run E-Lib (Cross-Platform)
