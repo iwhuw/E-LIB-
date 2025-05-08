@@ -45,6 +45,7 @@ The application can work in two modes:
 ## Open the application:
 
 -Open index.html in your browser for local testing
+
 -Or deploy to a web server
 
 ## For Backend
